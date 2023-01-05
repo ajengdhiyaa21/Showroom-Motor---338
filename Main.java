@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String nik,nama,alamat,tlp,tgl,wkt,kode_pmbyrn,mrk,pelanggan,warna,thn;
-        long hargaawal;
+        long harga;
         long byr;
         char plh,plh2,cek;
         boolean beli = true, menu = true;
@@ -51,7 +51,7 @@ public class Main {
 
                                     System.out.println("Merk    : " + baru.getMerk());
                                     System.out.println("Nama    : " + baru.getNama());
-                                    System.out.println("Tahun   : " + baru.getTahun());
+                                    System.out.println("Tahun   : " + baru.getThn());
                                     System.out.println("Warna   : " + baru.getWrn());
                                     System.out.println("Harga   : " + baru.getHarga());
 
@@ -85,7 +85,7 @@ public class Main {
                                         System.out.println("Uang Pembayaran : ");
                                         byr = in.nextLong();
 
-                                        Transaksi trnsksiyamaha = new Transaksi(kode_pmbyrn, tgl, wkt, byr, 3658000);
+                                        Transaksi trnsksiyamaha = new Transaksi(kode_pmbyrn, tgl, wkt, byr, 36580000);
                                         trnsksiyamaha.datapelanggan(nik, nama, alamat, tlp);
                                         trnsksiyamaha.datamotor("Yamaha", "Yamaha XSR 155", "2019", "Black Black", 36580000);
                                         System.out.println();
@@ -103,12 +103,12 @@ public class Main {
                                 break;
                             case '2':
                                 while (true) {
-                                    System.out.println("========== YAMAHA XSR 155 ==========");
+                                    System.out.println("========== HONDA VARIO 125==========");
                                     Honda baru = new Honda("Vario 125", "Honda", "2012", "Matte White", 22350000);
 
                                     System.out.println("Merk    : " + baru.getMerk());
                                     System.out.println("Nama    : " + baru.getNama());
-                                    System.out.println("Tahun   : " + baru.getTahun());
+                                    System.out.println("Tahun   : " + baru.getThn());
                                     System.out.println("Warna   : " + baru.getWrn());
                                     System.out.println("Harga   : " + baru.getHarga());
 
@@ -191,7 +191,7 @@ public class Main {
                             System.out.println("| - Warna   : ");
                             warna = in.next();
                             System.out.println("| - Harga   : ");
-                            hargaawal = in.nextLong();
+                            harga = in.nextLong();
                             System.out.println("|_______________________________|");
                             System.out.println("| Data Penjual                  |");
                             System.out.println("|_______________________________|");
@@ -204,9 +204,9 @@ public class Main {
                             System.out.println("| - No.telp : ");
                             tlp = in.next();
 
-                            Transaksi Transaksijual = new Transaksi(kode_pmbyrn, tgl, wkt, thn, hargaawal);
+                            Transaksi Transaksijual = new Transaksi(kode_pmbyrn,tgl,wkt,20000000,10000000);;
                             Transaksijual.datapelanggan(nik, nama, alamat, tlp);
-                            Transaksijual.datamotorjual(mrk, nama, thn, warna, hargaawal);
+                            Transaksijual.datamotorjual(mrk, nama, thn, warna, harga);
 
                             Transaksijual.Transaksipenjualan();
                             new java.util.Scanner(System.in).nextLine();
